@@ -1,0 +1,57 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Question Gate",
+  "version": "1.0.0",
+  "description": "Requires an answer to a configurable question before using YouTube videos.",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "YouTube Question Gate",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icons/question-gate-48.png",
+      "96": "icons/question-gate-96.png"
+    }
+  },
+  "icons": {
+    "48": "icons/question-gate-48.png",
+    "96": "icons/question-gate-96.png",
+    "128": "icons/question-gate-128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "built-in-sheets.json",
+        "sheets/*.json"
+      ],
+      "matches": [
+        "*://www.youtube.com/*",
+        "*://m.youtube.com/*",
+        "*://youtube.com/*"
+      ]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "youtube-question-gate@example.local"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.youtube.com/*",
+        "*://m.youtube.com/*",
+        "*://youtube.com/*"
+      ],
+      "js": [
+        "shared/question-sheets.js",
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}

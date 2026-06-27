@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "study-practice",
+  "title": "Study Practice",
+  "description": "A mixed sheet with short-answer and numeric questions.",
+  "enabled": true,
+  "questions": [
+    {
+      "question": "What CSS property changes text color?",
+      "answer": "color"
+    },
+    {
+      "question": "What HTTP status code means Not Found?",
+      "answer": 404
+    },
+    {
+      "question": "A fair coin is flipped 3 times. What is P(all heads)?",
+      "answer": "1/8",
+      "tolerance": 0.005
+    }
+  ]
+}

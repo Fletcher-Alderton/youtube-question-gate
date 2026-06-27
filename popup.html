@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>YouTube Question Gate</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="popup-header">
+        <div>
+          <p class="eyebrow">Question Gate</p>
+          <h1>Sheets</h1>
+        </div>
+        <p>Choose what unlocks YouTube.</p>
+      </header>
+
+      <section class="panel panel-upload">
+        <div>
+          <h2>Upload</h2>
+          <p class="muted">JSON sheet or array</p>
+        </div>
+        <label class="file-picker">
+          <span>Choose JSON</span>
+          <input id="sheet-file" type="file" accept="application/json,.json" />
+        </label>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <h2>Built-In</h2>
+          <button id="reset-builtins" class="secondary-button" type="button">Reset</button>
+        </div>
+        <div id="builtin-sheet-list" class="sheet-list"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <h2>Uploaded</h2>
+          <button id="clear-sheets" class="secondary-button" type="button">Clear</button>
+        </div>
+        <div id="user-sheet-list" class="sheet-list"></div>
+      </section>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </main>
+
+    <script src="shared/question-sheets.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

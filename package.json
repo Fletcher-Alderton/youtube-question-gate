@@ -1,0 +1,20 @@
+{
+  "name": "youtube-question-gate",
+  "version": "1.0.0",
+  "description": "Firefox extension that requires a configurable question answer before using YouTube videos.",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "node scripts/test.js",
+    "validate": "node scripts/validate.js && npm test",
+    "package": "npm run validate && node scripts/package.js"
+  },
+  "keywords": [
+    "firefox-extension",
+    "webextension",
+    "youtube",
+    "focus",
+    "study"
+  ],
+  "license": "MIT"
+}

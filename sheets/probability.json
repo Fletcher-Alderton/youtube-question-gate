@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "builtin-probability",
+  "title": "Probability",
+  "description": "Basic probabilities and expected values.",
+  "builtin": true,
+  "enabled": true,
+  "questions": [
+    {
+      "question": "A fair coin is flipped 3 times. What is P(all heads)? Answer as a fraction or decimal.",
+      "answer": "1/8",
+      "tolerance": 0.005
+    },
+    {
+      "question": "A bag has 3 red and 5 blue balls. What is P(red)? Answer as a fraction or decimal.",
+      "answer": "3/8",
+      "tolerance": 0.005
+    },
+    {
+      "question": "A random variable pays 10 with probability 0.4 and 0 otherwise. What is its expected value?",
+      "answer": 4
+    },
+    {
+      "question": "A fair die is rolled once. What is P(rolling a 6)? Answer as a fraction or decimal.",
+      "answer": "1/6",
+      "tolerance": 0.005
+    },
+    {
+      "question": "A random variable pays 8 with probability 0.25 and 0 otherwise. What is its expected value?",
+      "answer": 2
+    }
+  ]
+}
