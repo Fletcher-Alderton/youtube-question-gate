@@ -2,6 +2,12 @@
 
 A Chrome and Firefox extension that blocks YouTube until you answer a question. It asks again when you open a different video, Short, or embed.
 
+## Screenshots
+
+![Question gate overlay on YouTube](docs/screenshots/overlay.png)
+
+![Toolbar popup with sheets and settings](docs/screenshots/popup.png)
+
 ## Install
 
 Download the latest release from GitHub.
