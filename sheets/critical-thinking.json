@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "builtin-critical-thinking",
+  "title": "Critical Thinking",
+  "description": "Logic, evidence, and reasoning habits.",
+  "builtin": true,
+  "enabled": false,
+  "questions": [
+    {
+      "question": "What is a claim supported by facts called?",
+      "answer": "evidence"
+    },
+    {
+      "question": "What kind of reasoning moves from specific examples to a general rule?",
+      "answer": "induction"
+    },
+    {
+      "question": "What kind of reasoning applies a general rule to a specific case?",
+      "answer": "deduction"
+    },
+    {
+      "question": "What is a mistaken belief caused by flawed reasoning called?",
+      "answer": "fallacy"
+    },
+    {
+      "question": "If all squares are rectangles, is every square a rectangle? Answer yes or no.",
+      "answer": "yes"
+    }
+  ]
+}

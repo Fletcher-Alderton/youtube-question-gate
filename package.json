@@ -1,7 +1,7 @@
 {
   "name": "youtube-question-gate",
   "version": "1.0.0",
-  "description": "Firefox extension that requires a configurable question answer before using YouTube videos.",
+  "description": "Chrome and Firefox extension that requires a configurable question answer before using YouTube videos.",
   "private": true,
   "type": "commonjs",
   "scripts": {

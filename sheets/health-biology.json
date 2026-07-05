@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "builtin-health-biology",
+  "title": "Health & Biology",
+  "description": "Human body, cells, and everyday health basics.",
+  "builtin": true,
+  "enabled": false,
+  "questions": [
+    {
+      "question": "What organ pumps blood through the body?",
+      "answer": "heart"
+    },
+    {
+      "question": "What molecule carries genetic information?",
+      "answer": "DNA"
+    },
+    {
+      "question": "How many chambers does the human heart have?",
+      "answer": 4
+    },
+    {
+      "question": "What nutrient is the body's main quick source of energy?",
+      "answer": "carbohydrate"
+    },
+    {
+      "question": "What body system includes the brain and spinal cord?",
+      "answer": "nervous system"
+    }
+  ]
+}

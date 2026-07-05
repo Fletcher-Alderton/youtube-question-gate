@@ -1,7 +1,12 @@
 [
-  "sheets/linear-algebra.json",
-  "sheets/calculus.json",
-  "sheets/probability.json",
-  "sheets/ai-maths.json",
-  "sheets/general-knowledge.json"
+  "sheets/maths-foundations.json",
+  "sheets/science.json",
+  "sheets/computing.json",
+  "sheets/web-development.json",
+  "sheets/history-civics.json",
+  "sheets/geography.json",
+  "sheets/language-literature.json",
+  "sheets/finance-economics.json",
+  "sheets/health-biology.json",
+  "sheets/critical-thinking.json"
 ]

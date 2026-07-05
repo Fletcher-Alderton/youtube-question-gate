@@ -6,6 +6,7 @@ const root = path.resolve(__dirname, "..");
 function listJsonFiles() {
   return [
     "manifest.json",
+    "package.json",
     "built-in-sheets.json",
     "question-sheet.schema.json",
     "sample-sheet.json",

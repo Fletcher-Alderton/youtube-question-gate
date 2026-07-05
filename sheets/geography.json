@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "builtin-geography",
+  "title": "Geography",
+  "description": "Countries, capitals, landforms, and maps.",
+  "builtin": true,
+  "enabled": false,
+  "questions": [
+    {
+      "question": "What is the capital city of Japan?",
+      "answer": "Tokyo"
+    },
+    {
+      "question": "What is the largest ocean on Earth?",
+      "answer": "Pacific"
+    },
+    {
+      "question": "What continent is Brazil in?",
+      "answer": "South America"
+    },
+    {
+      "question": "What line is at 0 degrees latitude?",
+      "answer": "equator"
+    },
+    {
+      "question": "What country has the cities Sydney, Melbourne, and Perth?",
+      "answer": "Australia"
+    }
+  ]
+}

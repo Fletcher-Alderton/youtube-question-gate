@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "builtin-computing",
+  "title": "Computing",
+  "description": "Programming, data, and computer basics.",
+  "builtin": true,
+  "enabled": true,
+  "questions": [
+    {
+      "question": "What data structure uses first in, first out order?",
+      "answer": "queue"
+    },
+    {
+      "question": "In binary, what is decimal 5?",
+      "answer": 101
+    },
+    {
+      "question": "What does CPU stand for?",
+      "answer": "central processing unit"
+    },
+    {
+      "question": "What value means true or false in programming?",
+      "answer": "boolean"
+    },
+    {
+      "question": "What command is commonly used to copy a Git repository?",
+      "answer": "git clone"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "builtin-history-civics",
+  "title": "History & Civics",
+  "description": "Historical events, government, and public institutions.",
+  "builtin": true,
+  "enabled": false,
+  "questions": [
+    {
+      "question": "What document begins with the words 'We the People'?",
+      "answer": "constitution"
+    },
+    {
+      "question": "How many branches are in the United States federal government?",
+      "answer": 3
+    },
+    {
+      "question": "What wall fell in Berlin in 1989?",
+      "answer": "Berlin Wall"
+    },
+    {
+      "question": "What ancient civilization built the pyramids at Giza?",
+      "answer": "Egypt"
+    },
+    {
+      "question": "What term means the right to vote?",
+      "answer": "suffrage"
+    }
+  ]
+}

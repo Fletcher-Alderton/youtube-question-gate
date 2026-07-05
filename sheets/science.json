@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "builtin-science",
+  "title": "Science",
+  "description": "Basic physics, chemistry, and Earth science.",
+  "builtin": true,
+  "enabled": true,
+  "questions": [
+    {
+      "question": "What force pulls objects toward Earth?",
+      "answer": "gravity"
+    },
+    {
+      "question": "What is the chemical symbol for water?",
+      "answer": "H2O"
+    },
+    {
+      "question": "What gas do plants take in during photosynthesis?",
+      "answer": "carbon dioxide"
+    },
+    {
+      "question": "How many states of matter are commonly taught as solid, liquid, gas, and plasma?",
+      "answer": 4
+    },
+    {
+      "question": "What planet is known as the Red Planet?",
+      "answer": "Mars"
+    }
+  ]
+}

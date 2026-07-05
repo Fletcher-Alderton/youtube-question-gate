@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "builtin-finance-economics",
+  "title": "Finance & Economics",
+  "description": "Money, budgets, interest, and basic economics.",
+  "builtin": true,
+  "enabled": false,
+  "questions": [
+    {
+      "question": "If you spend 30 from 100, how much remains?",
+      "answer": 70
+    },
+    {
+      "question": "What is 10% interest on 200 for one year?",
+      "answer": 20
+    },
+    {
+      "question": "What term means a plan for income and spending?",
+      "answer": "budget"
+    },
+    {
+      "question": "What economic term means the amount of a product people want to buy?",
+      "answer": "demand"
+    },
+    {
+      "question": "What is profit if revenue is 500 and cost is 350?",
+      "answer": 150
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "builtin-web-development",
+  "title": "Web Development",
+  "description": "HTML, CSS, HTTP, and browser basics.",
+  "builtin": true,
+  "enabled": true,
+  "questions": [
+    {
+      "question": "What HTML element creates a link?",
+      "answer": "a"
+    },
+    {
+      "question": "What CSS property changes text color?",
+      "answer": "color"
+    },
+    {
+      "question": "What HTTP status code means Not Found?",
+      "answer": 404
+    },
+    {
+      "question": "What language runs natively in web browsers for page interactivity?",
+      "answer": "JavaScript"
+    },
+    {
+      "question": "What CSS layout system uses rows and columns?",
+      "answer": "grid"
+    }
+  ]
+}

@@ -8,11 +8,13 @@
   const userList = document.getElementById("user-sheet-list");
   const clearButton = document.getElementById("clear-sheets");
   const resetBuiltInsButton = document.getElementById("reset-builtins");
+  const showCorrectAnswerInput = document.getElementById("show-correct-answer");
   const statusNode = document.getElementById("status");
 
   let builtInSheets = [];
   let userSheets = [];
   let sheetSettings = {};
+  let options = Object.assign({}, Sheets.DEFAULT_OPTIONS);
 
   function setStatus(message, isError) {
     statusNode.textContent = message;
@@ -31,6 +33,10 @@
     await extensionApi.storage.local.set({ [Sheets.SHEET_SETTINGS_KEY]: sheetSettings });
   }
 
+  async function saveOptions() {
+    await extensionApi.storage.local.set({ [Sheets.OPTIONS_KEY]: options });
+  }
+
   async function loadBuiltInSheets() {
     builtInSheets = await Sheets.loadBuiltInSheets(extensionApi);
   }
@@ -39,6 +45,7 @@
     const settings = await Sheets.loadStoredSettings(extensionApi);
     userSheets = settings.userSheets;
     sheetSettings = settings.sheetSettings;
+    options = settings.options;
   }
 
   function renderSheetList(container, sheets, options) {
@@ -118,6 +125,10 @@
     });
   }
 
+  function renderOptions() {
+    showCorrectAnswerInput.checked = options.showCorrectAnswer;
+  }
+
   function readFileAsText(file) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -173,8 +184,17 @@
     setStatus("Built-in sheets reset.", false);
   });
 
+  showCorrectAnswerInput.addEventListener("change", async () => {
+    options.showCorrectAnswer = showCorrectAnswerInput.checked;
+    await saveOptions();
+    setStatus(`Correct answers ${options.showCorrectAnswer ? "shown" : "hidden"} after wrong attempts.`, false);
+  });
+
   Promise.all([loadBuiltInSheets(), loadSettings()])
-    .then(renderSheets)
+    .then(() => {
+      renderOptions();
+      renderSheets();
+    })
     .catch((error) => {
       setStatus(error.message || "Could not load settings.", true);
     });

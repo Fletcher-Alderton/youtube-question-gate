@@ -1,62 +1,61 @@
 # YouTube Question Gate
 
-A Chrome and Firefox WebExtension that blocks YouTube until the user answers a question. It asks again when a different YouTube video, Short, or embed is opened.
+A Chrome and Firefox extension that blocks YouTube until you answer a question. It asks again when you open a different video, Short, or embed.
 
-## Features
+## Install
 
-- Blocks YouTube with a clean monochrome question overlay.
-- Uses configurable JSON question sheets.
-- Includes built-in sheets for maths, AI maths, probability, and general knowledge.
-- Lets users upload, enable, disable, and delete sheets from the toolbar popup.
-- Handles YouTube single-page navigation, recommended-video clicks, Shorts, and embeds.
-- Supports numeric answers, decimals, fractions such as `1/4`, and short exact text answers.
-- Uses system light/dark mode.
-- Stores all uploaded sheets locally in browser extension storage.
-
-## Install for Development
+Download the latest release from GitHub.
 
 ### Chrome
 
-1. Open `chrome://extensions`.
-2. Enable `Developer mode`.
-3. Click `Load unpacked`.
-4. Select this repository folder.
-5. Click the extension icon in the toolbar to manage question sheets.
+1. Download `youtube-question-gate-<version>.zip`.
+2. Unzip it.
+3. Open `chrome://extensions`.
+4. Enable `Developer mode`.
+5. Click `Load unpacked`.
+6. Select the unzipped folder.
 
 ### Firefox
 
-1. Open Firefox.
-2. Go to `about:debugging#/runtime/this-firefox`.
-3. Click `Load Temporary Add-on...`.
-4. Select `manifest.json` from this repository.
-5. Click the extension icon in the toolbar to manage question sheets.
+For Firefox Developer Edition, Nightly, or ESR:
 
-Temporary add-ons are removed when Firefox restarts.
+1. Open `about:config`.
+2. Set `xpinstall.signatures.required` to `false`.
+3. Download `youtube-question-gate-<version>.xpi`.
+4. Open `about:addons`.
+5. Click the gear button.
+6. Choose `Install Add-on From File...`.
+7. Select the `.xpi`.
+
+Regular Firefox requires Mozilla-signed extensions for permanent file installs. For a temporary install, open `about:debugging#/runtime/this-firefox`, click `Load Temporary Add-on...`, and select `manifest.json` from the unzipped release folder.
+
+## Features
+
+- Blocks YouTube until the current page or video is unlocked.
+- Includes 10 built-in question sheets across broad study topics.
+- Supports uploaded JSON question sheets.
+- Lets you enable, disable, upload, and delete sheets from the toolbar popup.
+- Optionally hides correct answers after wrong attempts.
+- Supports numbers, decimals, fractions such as `1/4`, and short text answers.
+- Stores settings and uploaded sheets locally in browser extension storage.
 
 ## Build
 
-No external dependencies are required.
+No dependencies are required.
 
 ```sh
-npm test
 npm run validate
 npm run package
 ```
 
-The package command writes a zip file to `dist/`.
+`npm run package` creates:
 
-## Release Checklist
-
-1. Update `manifest.json`, `package.json`, and `CHANGELOG.md` to the same version.
-2. Run `npm run validate`.
-3. Run `npm run package`.
-4. Upload the generated `dist/youtube-question-gate-<version>.zip` to the GitHub release.
-
-Generated archives in `dist/` are ignored by Git.
+- `dist/youtube-question-gate-<version>.zip`
+- `dist/youtube-question-gate-<version>.xpi`
 
 ## Question Sheets
 
-Question sheets are JSON files that match `question-sheet.schema.json`. A file can contain one sheet object or an array of sheet objects.
+Question sheets are JSON files. Use `sample-sheet.json` as a starting point.
 
 ```json
 {
@@ -76,25 +75,11 @@ Question sheets are JSON files that match `question-sheet.schema.json`. A file c
 }
 ```
 
-Use `sample-sheet.json` as a starting point. `tolerance` is optional and only applies to numeric answers.
-
-## Built-In Sheets
-
-Built-in sheets live in `sheets/` and are listed in `built-in-sheets.json`.
-
-- Linear Algebra
-- Calculus
-- Probability
-- AI Maths
-- General Knowledge
-
-Users can toggle each built-in sheet from the toolbar popup.
+See `question-sheet.schema.json` for the full format.
 
 ## Privacy
 
-YouTube Question Gate does not send uploaded sheets, answers, or browsing data to a server. Settings and uploaded sheets are stored locally with browser extension `storage.local`.
-
-See `PRIVACY.md` for the full privacy policy.
+YouTube Question Gate does not send uploaded sheets, answers, settings, or browsing data to a server. See `PRIVACY.md`.
 
 ## License
 

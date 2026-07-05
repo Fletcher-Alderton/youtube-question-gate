@@ -54,6 +54,8 @@ assert.strictEqual(enabledQuestions[1].answer, "color");
 
 assert.deepStrictEqual(Sheets.getEnabledQuestions([normalizedSheet], { demo: false }), []);
 assert.deepStrictEqual(Sheets.normalizeStoredSheets([{ bad: true }, normalizedSheet]), [normalizedSheet]);
+assert.strictEqual(Sheets.normalizeOptions({ showCorrectAnswer: false }).showCorrectAnswer, false);
+assert.strictEqual(Sheets.normalizeOptions({}).showCorrectAnswer, true);
 assert.throws(() => {
   Sheets.normalizeSheet({
     schemaVersion: 1,

@@ -28,4 +28,4 @@ Privacy policy updates will be published in this repository.
 
 ## Contact
 
-For privacy or security questions, use the contact method listed on the extension store listing or repository.
+For privacy or security questions, use the contact method listed in this repository.

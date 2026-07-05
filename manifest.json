@@ -34,7 +34,7 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "youtube-question-gate@example.local"
+      "id": "youtube-question-gate@fletcher-alderton.github.io"
     }
   },
   "content_scripts": [

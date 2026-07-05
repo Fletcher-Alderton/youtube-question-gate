@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "builtin-language-literature",
+  "title": "Language & Literature",
+  "description": "Grammar, vocabulary, and common literary terms.",
+  "builtin": true,
+  "enabled": false,
+  "questions": [
+    {
+      "question": "What part of speech names a person, place, thing, or idea?",
+      "answer": "noun"
+    },
+    {
+      "question": "What punctuation mark ends most questions?",
+      "answer": "question mark"
+    },
+    {
+      "question": "What is a comparison using 'like' or 'as' called?",
+      "answer": "simile"
+    },
+    {
+      "question": "What is the opposite of synonym?",
+      "answer": "antonym"
+    },
+    {
+      "question": "Who wrote Romeo and Juliet?",
+      "answer": "Shakespeare"
+    }
+  ]
+}

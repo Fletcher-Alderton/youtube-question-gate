@@ -3,9 +3,13 @@
 
   const USER_SHEETS_KEY = "gatekeeperUserSheets";
   const SHEET_SETTINGS_KEY = "gatekeeperSheetSettings";
+  const OPTIONS_KEY = "gatekeeperOptions";
   const CURRENT_SCHEMA_VERSION = 1;
   const DEFAULT_NUMERIC_TOLERANCE = 0.000001;
   const SHEET_ID_PATTERN = /^[a-zA-Z0-9._-]+$/;
+  const DEFAULT_OPTIONS = {
+    showCorrectAnswer: true
+  };
 
   function parseAnswer(value) {
     const trimmed = String(value).trim();
@@ -127,6 +131,14 @@
       .filter(Boolean);
   }
 
+  function normalizeOptions(value) {
+    if (!isPlainObject(value)) return Object.assign({}, DEFAULT_OPTIONS);
+
+    return {
+      showCorrectAnswer: value.showCorrectAnswer !== false
+    };
+  }
+
   function isSheetEnabled(sheet, sheetSettings) {
     if (Object.prototype.hasOwnProperty.call(sheetSettings, sheet.id)) {
       return sheetSettings[sheet.id] !== false;
@@ -193,23 +205,27 @@
   }
 
   async function loadStoredSettings(extensionApi) {
-    const result = await extensionApi.storage.local.get([USER_SHEETS_KEY, SHEET_SETTINGS_KEY]);
+    const result = await extensionApi.storage.local.get([USER_SHEETS_KEY, SHEET_SETTINGS_KEY, OPTIONS_KEY]);
 
     return {
       userSheets: normalizeStoredSheets(result[USER_SHEETS_KEY]),
       sheetSettings: isPlainObject(result[SHEET_SETTINGS_KEY])
         ? result[SHEET_SETTINGS_KEY]
-        : {}
+        : {},
+      options: normalizeOptions(result[OPTIONS_KEY])
     };
   }
 
   window.QuestionGateSheets = {
+    DEFAULT_OPTIONS,
+    OPTIONS_KEY,
     USER_SHEETS_KEY,
     SHEET_SETTINGS_KEY,
     getEnabledQuestions,
     isSheetEnabled,
     loadBuiltInSheets,
     loadStoredSettings,
+    normalizeOptions,
     normalizeSheet,
     normalizeStoredSheets,
     normalizeTextAnswer,

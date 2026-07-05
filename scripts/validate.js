@@ -19,6 +19,17 @@ listJavaScriptFiles().forEach((relativePath) => {
 });
 
 const manifest = readJson("manifest.json");
+const packageJson = readJson("package.json");
+const changelog = fs.readFileSync(path.join(root, "CHANGELOG.md"), "utf8");
+
+if (packageJson.version !== manifest.version) {
+  throw new Error(`Version mismatch: package.json ${packageJson.version} does not match manifest.json ${manifest.version}`);
+}
+
+if (!changelog.includes(`## ${manifest.version}`)) {
+  throw new Error(`CHANGELOG.md is missing an entry for ${manifest.version}`);
+}
+
 const action = manifest.action || manifest.browser_action;
 const webAccessibleResources = (manifest.web_accessible_resources || []).flatMap((entry) => {
   if (typeof entry === "string") return [entry];

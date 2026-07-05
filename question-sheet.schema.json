@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.local/youtube-question-gate/question-sheet.schema.json",
+  "$id": "https://fletcher-alderton.github.io/youtube-question-gate/question-sheet.schema.json",
   "title": "YouTube Question Gate Question Sheet",
   "type": "object",
   "additionalProperties": false,

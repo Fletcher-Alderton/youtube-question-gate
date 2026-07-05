@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "builtin-maths-foundations",
+  "title": "Maths Foundations",
+  "description": "Arithmetic, percentages, fractions, and simple algebra.",
+  "builtin": true,
+  "enabled": true,
+  "questions": [
+    {
+      "question": "What is 15% of 80?",
+      "answer": 12
+    },
+    {
+      "question": "Simplify 3/4 + 1/4.",
+      "answer": 1
+    },
+    {
+      "question": "Solve for x: 2x + 5 = 13.",
+      "answer": 4
+    },
+    {
+      "question": "What is 9 squared?",
+      "answer": 81
+    },
+    {
+      "question": "What is the mean of 4, 6, and 11?",
+      "answer": 7
+    }
+  ]
+}

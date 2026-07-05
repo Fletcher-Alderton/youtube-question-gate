@@ -10,6 +10,7 @@
     builtInSheets: [],
     userSheets: [],
     sheetSettings: {},
+    options: Object.assign({}, window.QuestionGateSheets.DEFAULT_OPTIONS),
     currentGateKey: "",
     currentQuestion: null,
     lastObservedGateKey: "",
@@ -86,6 +87,14 @@
     if (!STATE.messageNode) return;
     STATE.messageNode.textContent = text;
     STATE.messageNode.dataset.error = isError ? "true" : "false";
+  }
+
+  function getIncorrectAnswerMessage(answerText) {
+    if (!STATE.options.showCorrectAnswer) {
+      return "Incorrect. Try again.";
+    }
+
+    return `Incorrect. Correct answer is ${answerText}.`;
   }
 
   function createOverlay() {
@@ -179,7 +188,7 @@
 
     if (STATE.currentQuestion.answerType === "text") {
       if (Sheets.normalizeTextAnswer(STATE.answerInput.value) !== STATE.currentQuestion.answer) {
-        setMessage(`Incorrect. Correct answer is ${STATE.currentQuestion.displayAnswer}.`, true);
+        setMessage(getIncorrectAnswerMessage(STATE.currentQuestion.displayAnswer), true);
         STATE.answerInput.select();
         return;
       }
@@ -194,10 +203,10 @@
       return;
     }
 
-    const tolerance = STATE.currentQuestion.tolerance || 0.000001;
+    const tolerance = Number.isFinite(STATE.currentQuestion.tolerance) ? STATE.currentQuestion.tolerance : 0.000001;
     if (Math.abs(parsedAnswer - STATE.currentQuestion.answer) > tolerance) {
       const answerText = STATE.currentQuestion.displayAnswer || STATE.currentQuestion.answer;
-      setMessage(`Incorrect. Correct answer is ${answerText}.`, true);
+      setMessage(getIncorrectAnswerMessage(answerText), true);
       STATE.answerInput.select();
       return;
     }
@@ -281,9 +290,11 @@
       const settings = await Sheets.loadStoredSettings(extensionApi);
       STATE.userSheets = settings.userSheets;
       STATE.sheetSettings = settings.sheetSettings;
+      STATE.options = settings.options;
     } catch (error) {
       STATE.userSheets = [];
       STATE.sheetSettings = {};
+      STATE.options = Object.assign({}, Sheets.DEFAULT_OPTIONS);
     }
   }
 
@@ -357,6 +368,10 @@
         !Array.isArray(changes[Sheets.SHEET_SETTINGS_KEY].newValue)
         ? changes[Sheets.SHEET_SETTINGS_KEY].newValue
         : {};
+    }
+
+    if (changes[Sheets.OPTIONS_KEY]) {
+      STATE.options = Sheets.normalizeOptions(changes[Sheets.OPTIONS_KEY].newValue);
     }
 
     evaluateGate("storage.onChanged", { forceGate: true });
